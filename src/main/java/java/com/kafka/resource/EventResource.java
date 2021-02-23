@@ -1,21 +1,19 @@
 package java.com.kafka.resource;
 
-import javax.inject.Inject;
+import java.com.kafka.domain.Event;
+
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-
-import org.eclipse.microprofile.reactive.messaging.Channel;
-import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 @Path("/events")
 public class EventResource {
 	
-	@Inject
-	@Channel("newEvent")
-	Emitter<String> eventEmitter;
+//	@Inject
+//	@Channel("newEvent")
+//	Emitter<Event> eventEmitter;
 
     @POST
-    public void send(String newEvent) {
-        eventEmitter.send(newEvent);
+    public void send(Event newEvent) {
+//        eventEmitter.send(newEvent);
     }
 }
