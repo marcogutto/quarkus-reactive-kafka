@@ -1,12 +1,8 @@
-package java.com.kafka;
-
-import java.com.kafka.domain.Event;
+package java.com.kafka.resource;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
@@ -16,11 +12,10 @@ public class EventResource {
 	
 	@Inject
 	@Channel("newEvent")
-	Emitter<Event> eventEmitter;
+	Emitter<String> eventEmitter;
 
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public void save(Event newEvent) {
+    public void send(String newEvent) {
         eventEmitter.send(newEvent);
     }
 }

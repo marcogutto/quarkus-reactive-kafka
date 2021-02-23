@@ -14,13 +14,8 @@ public class EventOutgoing {
 
 	private Random random = new Random();
 
-	@Outgoing("preco-gerado")
+	@Outgoing("newEvent")
 	public Flowable<Double> generate() {
-		return Flowable.interval(5, TimeUnit.SECONDS).map(tick -> random.nextDouble());
-	}
-	
-	@Outgoing("preco-gerado-to-cluster")
-	public Flowable<Double> generateToCluster() {
 		return Flowable.interval(5, TimeUnit.SECONDS).map(tick -> random.nextDouble());
 	}
 
