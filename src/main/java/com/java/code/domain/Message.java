@@ -1,12 +1,13 @@
-package java.com.kafka.domain;
+package com.java.code.domain;
 
+import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoEntityBase;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper=false)
 
-public class Message {
+public class Message extends ReactivePanacheMongoEntityBase{
 	
 	public String dtm;
 	public String uid;

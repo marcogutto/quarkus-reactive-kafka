@@ -1,4 +1,4 @@
-package java.com.example;
+package com.java.code;
 
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
